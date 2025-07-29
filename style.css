@@ -1,0 +1,120 @@
+/* 基本設定 */
+body { margin: 0; font-family: "MS Pゴシック", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; color: #FFFFFF; background-color: #000033; overflow-x: hidden; }
+
+/* オーロラグラデーション背景 */
+body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(125deg, #0d005e, transparent 40%), linear-gradient(305deg, #56008f, transparent 40%), linear-gradient(215deg, #005a9c, transparent 40%); background-color: var(--scroll-bg-color, #000033); z-index: -1; animation: aurora-animation 20s infinite linear; }
+@keyframes aurora-animation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+/* リンクの色 */
+a { color: #FFFF00; text-decoration: none; }
+a:visited { color: #FF00FF; }
+a:hover { text-decoration: underline; }
+
+/* ヘッダー */
+header { background: rgba(0, 0, 0, 0.5); padding: 10px 20px; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid #FFFF00; }
+.header-container { display: flex; justify-content: space-between; align-items: center; }
+.site-title a { font-size: 24px; font-weight: bold; color: #FFFFFF; text-shadow: 2px 2px #FF00FF; }
+
+/* メインコンテンツとフッター */
+main { padding: 20px; max-width: 800px; margin: 0 auto; }
+footer { text-align: center; padding: 20px; margin-top: 40px; background: rgba(0, 0, 0, 0.5); border-top: 2px solid #FFFF00; }
+
+/* 1996年風のパーツ */
+hr { border: 0; height: 1px; background: #FFFF00; margin: 20px 0; }
+h2 { color: #FF69B4; font-size: 22px; }
+h3 { font-size: 20px; color: #00FFFF; }
+.main-image { max-width: 100%; height: auto; border: 5px solid #FFFFFF; box-shadow: 0 0 15px #FFFF00; }
+.welcome-message { font-size: 18px; line-height: 1.6; }
+.copyright { font-size: 14px; }
+
+/* PC用のナビゲーションメニュー */
+.nav-menu ul { margin: 0; padding: 0; list-style: none; display: flex; }
+.nav-menu li { margin-left: 20px; }
+.nav-menu a { font-size: 18px; }
+
+/* ハンバーガーメニュー */
+.hamburger-menu { display: none; cursor: pointer; }
+.hamburger-menu .bar { width: 25px; height: 3px; background-color: #FFFFFF; margin: 5px 0; }
+
+/* --- Profile Page --- */
+.profile-table { border-collapse: collapse; width: 100%; max-width: 700px; margin: 20px auto; text-align: left; }
+.profile-table td { padding: 10px; vertical-align: middle; }
+.profile-table img { width: 150px; height: auto; border: 3px solid #FFFFFF; display: block; margin-right: 20px; }
+
+/* --- Discography Page --- */
+.disco-item { width: 100%; max-width: 700px; margin: 20px auto; text-align: left; }
+.disco-item td { padding: 10px; vertical-align: top; }
+.jacket-image { width: 200px; height: auto; border: 3px solid #FFFFFF; margin-right: 20px; }
+.song-list { width: 100%; max-width: 700px; border-collapse: collapse; text-align: left; }
+.song-list th, .song-list td { border: 1px solid #FFFF00; padding: 8px; }
+.song-list th { background-color: rgba(255, 255, 0, 0.2); }
+
+/* --- Gallery Page --- */
+.gallery-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+.gallery-item { width: 30%; min-width: 220px; background-color: rgba(0, 0, 0, 0.3); border: 1px solid #FFFF00; padding: 10px; box-sizing: border-box; }
+.gallery-item img { max-width: 100%; height: auto; display: block; }
+.gallery-caption { font-size: 14px; margin-top: 10px; line-height: 1.4; }
+
+/* --- BBS Page --- */
+.bbs-rule { color: #FF6347; border: 1px dotted #FF6347; padding: 10px; margin: 10px auto; max-width: 600px; }
+.bbs-form { max-width: 600px; margin: 20px auto; text-align: left; }
+.bbs-form div { margin-bottom: 10px; }
+.bbs-form label { display: block; margin-bottom: 5px; }
+.bbs-form input[type="text"], .bbs-form textarea { width: 100%; background: #000044; color: #FFFFFF; border: 1px solid #FFFF00; padding: 5px; box-sizing: border-box; }
+.form-buttons { text-align: center; }
+.bbs-log-container { text-align: left; }
+.bbs-post { background-color: rgba(0, 0, 68, 0.8); border: 1px solid #00FFFF; margin-bottom: 15px; }
+.bbs-post-header { background-color: rgba(0, 0, 100, 0.8); padding: 8px; font-size: 14px; border-bottom: 1px solid #00FFFF; }
+.bbs-post-body { padding: 15px; line-height: 1.6; }
+.管理人 { color: #00FFFF; font-weight: bold; }
+
+/* ▼▼▼ ここからが今回追加したスタイル ▼▼▼ */
+/* --- Link Page --- */
+.link-info {
+    border: 1px dotted #00FFFF;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+.site-data {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    margin-top: 15px;
+    text-align: left;
+}
+.link-list { text-align: left; }
+.link-item {
+    background-color: rgba(0, 0, 68, 0.8);
+    border: 1px solid #FFFF00;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.link-item h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+/* ▲▲▲ ここまでが今回追加したスタイル ▲▲▲ */
+
+
+/* レスポンシブ対応（スマホ表示） */
+@media (max-width: 768px) {
+    .nav-menu { display: none; }
+    .hamburger-menu { display: block; }
+    header.nav-open .nav-menu { display: block; position: absolute; top: 60px; left: 0; width: 100%; background: rgba(0, 0, 0, 0.9); }
+    header.nav-open .nav-menu ul { flex-direction: column; width: 100%; }
+    header.nav-open .nav-menu li { margin: 0; text-align: center; border-bottom: 1px solid #333333; }
+    header.nav-open .nav-menu a { display: block; padding: 15px; }
+
+    /* プロフィールテーブルのスマホ調整 */
+    .profile-table td { display: block; width: auto; text-align: center; padding: 10px 0; }
+    .profile-table img { margin: 0 auto 10px auto; }
+
+    /* ディスコグラフィーのスマホ調整 */
+    .disco-item td { display: block; width: auto; text-align: center; padding: 10px 0; }
+    .jacket-image { margin: 0 auto 10px auto; }
+    .song-list { font-size: 14px; }
+
+    /* ギャラリーのスマホ調整 */
+    .gallery-item { width: 100%; }
+}

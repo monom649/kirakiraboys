@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBS - KIRA-KIRA BOYS FOREVER!</title>
+    <!-- CSSファイルを読み込むためのリンク -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ヘッダーエリア（全ページ共通） -->
+    <header>
+        <div class="header-container">
+            <h1 class="site-title"><a href="index.html">KIRA-KIRA BOYS FOREVER!</a></h1>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Top</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="discography.html">Discography</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="bbs.html">BBS</a></li>
+                <li><a href="link.html">Link</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツエリア（ここからがBBSページ固有の内容） -->
+    <main>
+        <center>
+            <h2>★ KIRA-KIRA BOYS BBS ★</h2>
+            <p style="color: yellow;">みんなでKIRA-KIRA BOYSを応援する掲示板です！</p>
+            <div class="bbs-rule">
+                <b>※お願い※</b><br>
+                悪口や、他の人が見てイヤな気持ちになる書き込みは絶対にやめてね。みんなで仲良く、楽しく使ってね！
+            </div>
+            <hr>
+
+            <!-- 書き込みフォーム（ダミー） -->
+            <form class="bbs-form">
+                <div><label>お名前：</label><input type="text" name="name" value="ななしのKIRA-KIRA FAMILY"></div>
+                <div><label>題名：</label><input type="text" name="subject"></div>
+                <div><label>内容：</label><textarea name="message" rows="4"></textarea></div>
+                <div class="form-buttons">
+                    <input type="submit" value="書き込む">
+                    <input type="reset" value="リセット">
+                </div>
+            </form>
+
+            <hr>
+
+            <!-- 過去ログ -->
+            <div class="bbs-log-container">
+                <!-- 書き込み No.5 -->
+                <div class="bbs-post">
+                    <div class="bbs-post-header"><b>5. はじめまして！</b> - <b>投稿者：</b>みか - <b>投稿日：</b>96/10/26 21:30</div>
+                    <div class="bbs-post-body">はじめまして！最近KIRA-KIRA BOYSのファンになりました、みかです。昔の曲も全部聴いてます！特に「YANKEE HEART」が大好きです。HIROSHIくんが戻ってくるのを信じて、みんなで応援していきたいです。よろしくお願いします！</div>
+                </div>
+                <!-- 書き込み No.4（管理人からの返信） -->
+                <div class="bbs-post">
+                    <div class="bbs-post-header"><b>4. Re: 100番ゲット！</b> - <b>投稿者：</b><span class="管理人">なぎさ（管理人）</span> - <b>投稿日：</b>96/10/26 18:00</div>
+                    <div class="bbs-post-body">＞あゆみさん<br>キリ番ゲットおめでとうございます＆報告ありがとう！100人目のお客様、とっても嬉しいです！これからもこのサイトとKIRA-KIRA BOYSをよろしくね♪</div>
+                </div>
+                <!-- 書き込み No.3 -->
+                <div class="bbs-post">
+                    <div class="bbs-post-header"><b>3. 昨日の歌番組見たよ！</b> - <b>投稿者：</b>マサキ - <b>投稿日：</b>96/10/26 12:15</div>
+                    <div class="bbs-post-body">昨日の「ミュージックステージ」、KEN-KENとYU-KUNの二人だったけど、すっごく良かった！二人だけでも輝いてたよ！でも、やっぱり早く3人のステージが見たいな。HIROSHI、みんな待ってるぞ！</div>
+                </div>
+                <!-- 書き込み No.2 -->
+                <div class="bbs-post">
+                    <div class="bbs-post-header"><b>2. 100番ゲット！</b> - <b>投稿者：</b>あゆみ - <b>投稿日：</b>96/10/25 23:50</div>
+                    <div class="bbs-post-body">わーい！アクセスカウンター見たら、ちょうど100番でした！記念に書き込みします！管理人さん、素敵なサイトをありがとう！</div>
+                </div>
+                <!-- 書き込み No.1 -->
+                <div class="bbs-post">
+                    <div class="bbs-post-header"><b>1. BBS開設しました！</b> - <b>投稿者：</b><span class="管理人">なぎさ（管理人）</span> - <b>投稿日：</b>96/10/25 20:00</div>
+                    <div class="bbs-post-body">今日からBBSをオープンします！ファン同士の交流や、KIRA-KIRA BOYSへの応援メッセージなど、なんでも自由に書き込んでいってね！</div>
+                </div>
+            </div>
+        </center>
+    </main>
+
+    <!-- フッターエリア（全ページ共通） -->
+    <footer>
+        <p class="copyright">&copy; 1996 KIRA-KIRA BOYS FOREVER!</p>
+    </footer>
+
+    <!-- JavaScriptファイルを読み込むための記述 -->
+    <script src="script.js"></script>
+</body>
+</html>
