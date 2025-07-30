@@ -52,15 +52,10 @@ h4 { font-size: 18px; color: #FFB6C1; }
 
 /* ▼▼▼ ここからが今回修正・追加したスタイル ▼▼▼ */
 /* --- New Discography Elements --- */
-.suno-embed-container {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    padding-top: 56.25%; /* アスペクト比 16:9 の場合。Sunoの高さに合わせて調整 */
-    height: 180px; /* 高さを固定 */
+.suno-player-wrapper {
+    max-width: 760px; /* Suno指定の最大幅に合わせる */
     margin: 15px auto;
     border: 3px solid #00FFFF;
-    overflow: hidden;
 }
 .creator-credit {
     max-width: 600px;
@@ -96,6 +91,7 @@ h4 { font-size: 18px; color: #FFB6C1; }
 /* ▲▲▲ ここまでが今回修正・追加したスタイル ▲▲▲ */
 
 /* Gallery Page */
+/* (以下、変更なし) */
 .gallery-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
 .gallery-item { width: 30%; min-width: 220px; background-color: rgba(0, 0, 0, 0.3); border: 1px solid #FFFF00; padding: 10px; box-sizing: border-box; }
 .gallery-item img { max-width: 100%; height: auto; display: block; }
