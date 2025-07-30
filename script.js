@@ -1,7 +1,7 @@
 // --- 書き込みのデータベース（全300件） ---
 const postDatabase = [
     // (300件の書き込みデータは、ここに変更はありません)
-    // --- 初期投稿 (1-15) ---
+    // --- 初期投稿 (1-50) ---
     { author: 'ななしのFAMILY', title: 'はじめまして！', content: '最近ファンになりました！よろしくお願いします！' },
     { author: 'HIROSHI推し', title: 'リーダーの復帰まだかな…', content: 'HIROSHIくんがいないとやっぱり寂しい…でも、信じて待ってます！' },
     { author: 'KEN-KENウォッチャー', title: '昨日のバラエティ見た？', content: 'KEN-KENのツッコミ、キレッキレだったな(笑) アイドルなのに体張ってて最高！' },
@@ -63,22 +63,47 @@ function generateBbsPosts() {
     const container = document.getElementById('bbs-log-container-dynamic');
     if (!container) return; 
 
+    // サイトの誕生日
     const siteBirthday = new Date('2025-07-30T00:00:00+09:00');
     const now = new Date();
     const elapsedTime = now - siteBirthday;
-    const hoursPassed = elapsedTime / (1000 * 60 * 60);
-    let numPostsToShow = 1 + Math.floor(hoursPassed / 4);
-    if (numPostsToShow > 100) numPostsToShow = 100;
-    if (numPostsToShow > postDatabase.length) numPostsToShow = postDatabase.length;
 
+    // 経過時間を15分単位のブロック数に変換
+    const blocksPassed = Math.floor(elapsedTime / (1000 * 60 * 15));
+
+    // 投稿タイミングのパターン (1ブロック=15分, 4ブロック=1時間, 16ブロック=4時間)
+    const timeIntervals = [1, 4, 16];
+    
+    let numPostsToShow = 0;
+    let accumulatedBlocks = 0;
+
+    // サイト誕生日から現在までの投稿数を計算
+    for (let i = 0; i < 100; i++) {
+        // 各投稿の「次の投稿までの時間」を、投稿内容に基づいてランダムに決定
+        // これにより、同じ投稿はいつも同じ時間間隔で現れるように見える
+        const post = postDatabase[i % postDatabase.length];
+        const randomIntervalIndex = (post.author.length + post.content.length) % timeIntervals.length;
+        accumulatedBlocks += timeIntervals[randomIntervalIndex];
+        
+        if (accumulatedBlocks <= blocksPassed) {
+            numPostsToShow++;
+        } else {
+            break; // 未来の投稿は表示しない
+        }
+    }
+
+    if (numPostsToShow === 0) numPostsToShow = 1; // サイト開設直後は最低1件表示
+
+    // 表示する投稿のHTMLを生成
     let postsHtml = '';
-    const usedIndices = new Set(); 
+    const usedIndices = new Set();
     const displayCount = Math.min(numPostsToShow, postDatabase.length);
 
     for (let i = 0; i < displayCount; i++) {
         let postIndex;
         if (usedIndices.size >= postDatabase.length) break;
         do {
+            // ここでのランダムは、その日の投稿の中での「順序」を決めるためのもの
             postIndex = Math.floor(Math.random() * postDatabase.length);
         } while (usedIndices.has(postIndex));
         
@@ -105,19 +130,14 @@ function generateBbsPosts() {
 
 // --- ページ読み込み完了時に実行する処理 ---
 document.addEventListener('DOMContentLoaded', function() {
-    // ▼▼▼ ここからが修正箇所 ▼▼▼
-    // 1. ハンバーガーメニュー機能
+    // 1. ハンバーガーメニュー機能 (変更なし)
     const hamburger = document.querySelector('.hamburger-menu');
     const header = document.querySelector('header');
-
-    // ハンバーガーアイコン自体が存在するかチェック
     if (hamburger) {
         hamburger.addEventListener('click', function() {
-            // ヘッダーに 'nav-open' クラスを付けたり消したりする
             header.classList.toggle('nav-open');
         });
     }
-    // ▲▲▲ ここまでが修正箇所 ▲▲▲
 
     // 2. スクロール連動の背景色変更機能 (変更なし)
     window.addEventListener('scroll', function() {
