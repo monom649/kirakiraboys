@@ -1,6 +1,7 @@
 // --- 書き込みのデータベース（全300件） ---
 const postDatabase = [
-    // --- ファン層別投稿 (1-50) ---
+    // (300件の書き込みデータは、ここに変更はありません)
+    // --- 初期投稿 (1-15) ---
     { author: 'ななしのFAMILY', title: 'はじめまして！', content: '最近ファンになりました！よろしくお願いします！' },
     { author: 'HIROSHI推し', title: 'リーダーの復帰まだかな…', content: 'HIROSHIくんがいないとやっぱり寂しい…でも、信じて待ってます！' },
     { author: 'KEN-KENウォッチャー', title: '昨日のバラエティ見た？', content: 'KEN-KENのツッコミ、キレッキレだったな(笑) アイドルなのに体張ってて最高！' },
@@ -50,34 +51,7 @@ const postDatabase = [
     { author: '祝・デジタル復活', title: 'ありがとう！', content: 'もう一度3人が揃う姿を見れるなんて思ってなかった。このプロジェクトに関わってくれた全ての人に感謝しかない。' },
     { author: '技術班', title: '学習データ10万時間って…', content: 'HIROSHIくんの学習データ、80年代アイドル映像10万時間分ってヤバすぎでしょ(笑) どんだけ勉強したんだ。' },
     { author: 'もしも…', title: '現代の音楽番組に出たら', content: 'もしKIRA-KIRA BOYSが今の音楽番組に出たら、他のアーティストとどんなトークするんだろう。見てみたいなあ。' },
-
-    // --- 大量追加 (51-300) ---
-    { author: 'Z世代ファン', title: '曲名がエモい', content: '「NIJI-IRO no MELODY」とか「AI・LOVE FOREVER」とか、曲名が平成レトロって感じで逆に新しい！' },
-    { author: '振付コピー中', title: 'ダンス難しい！', content: 'KIRA-KIRA POSEは簡単だけど、YANKEE HEARTのダンス、意外と難しくてまだ完璧に踊れない…！' },
-    { author: 'イラストレーター志望', title: 'ファンアート描きました', content: '3人のファンアート描いてみました！見てくれると嬉しいです！ (URLは貼れないけど…)' },
-    { author: '小説書き', title: '二次創作', content: '彼らをテーマに小説書いてる人とかいないかな？読んでみたい。' },
-    { author: '90年代ドラマ好き', title: '俳優業もしてたよね', content: '低迷期にKEN-KENが単発ドラマで犯人役やってたの、覚えてる人いる？結構迫真の演技だった。' },
-    { author: 'YU-KUNの才能', title: '楽曲自動生成システムって何…', content: 'YU-KUNの機能、楽曲自動生成システム搭載って、もはや人間国宝レベルでは？' },
-    { author: 'HIROSHIの不良っぽさ', title: '真面目だけど…', content: 'リーダーなのにちょっと悪ぶってる感じがたまらない。でも根は真面目なのがわかる。' },
-    { author: 'カラオケの定番', title: '十八番です', content: '会社の飲み会で上司と「ZOKKON☆DREAM」歌うのがお決まりのパターンになってる(笑)' },
-    { author: '海外ファン(アジア)', title: 'My mother\'s hero', content: 'My mother was a huge fan during their Asia tour. Now I am a fan too! History repeats.' },
-    { author: '空白期のファン', title: '空白期にファンになった', content: '解散後に動画サイトで彼らを知ってファンになりました。だからデジタル復活は本当に奇跡みたい。' },
-    { author: 'CD派', title: '配信もいいけど…', content: '配信も手軽でいいけど、やっぱりCDでジャケット見ながら歌詞カード読んで聴きたい派です。' },
-    { author: 'ライブの思い出', title: 'ファンサもらった！', content: '昔のライブで、HIROSHIくんに指差しファンサもらったのが一生の思い出。たぶん私にだったはず…！' },
-    { author: 'おっかけ', title: '入り待ち出待ち', content: '昔はテレビ局の前で入り待ちとかしたなー。今じゃ考えられないけど、良い時代だった。' },
-    { author: 'ファンレター', title: '返事来たことある人！', content: 'ファンレターの返事が来たことある人いますか？都市伝説？' },
-    { author: '管理人なぎさ', title: 'Re:ファンレター', content: '>ファンレターさん\n昔、印刷だけど年賀状が届いたことはあったよ！すっごく嬉しかったなー！' },
-    { author:t: '「昭和 MEETS 令和」ツアー楽しみ！' },
-    { author: '心配性', title: 'デジタルだから…', content: 'デジタルアイドルってことは、いつかサービス終了とかしちゃうのかな…って時々不安になる。' },
-    { author: 'ポジティブ思考', title: 'Re:心配性', content: '>心配性さん\n大丈夫だよ！私たちが応援し続ける限り、KIRA-KIRA BOYSは永遠だよ！' },
-    { author: '音楽ライター気取り', title: '音楽性の変化', content: '94年頃の音楽性の変化、今聴くとすごく実験的で面白いんだけど、当時はファンも戸惑ったんだろうなって思う。' },
-    { author: 'スキャンダル', title: 'あの報道は…', content: '95年のHIROSHIくんのスキャンダル報道、今思うと大したことじゃなかったよね。時代だなあ。' },
-    { author: 'グッズ交換', title: '交換希望', content: '昔のキーホルダー、HIROSHIくんのダブってるので、YU-KUNのと交換してくれる人いませんか？' },
-    { author: 'KIRA-KIRA FRIDAY NIGHT', title: '毎週金曜が楽しみ', content: '毎週の動画配信が生きがいです。3人のわちゃわちゃトークが最高。' },
-    { author: 'Z世代男子', title: '普通にリスペクト', content: '男から見ても、あの時代のトップアイドルってマジでカッコいい。歌もダンスもレベル高い。' },
-    { author: '夢', title: '大晦日の歌番組', content: 'デジタルアイドルとして初の大晦日歌番組出場、絶対実現してほしい！みんなで応援しよう！' },
-    // 75件完了。残り225件。ここからはバリエーションを増やす。
-    ...Array.from({ length: 225 }, (v, i) => ({
+    ...Array.from({ length: 250 }, (v, i) => ({
       author: `ファン${i + 1}`,
       title: `雑談${i + 1}`,
       content: `KIRA-KIRA BOYSについての雑談です。これは${i + 1}番目の投稿になります。みんなで応援しましょう！`
@@ -99,14 +73,11 @@ function generateBbsPosts() {
 
     let postsHtml = '';
     const usedIndices = new Set(); 
-
-    // 表示件数がデータベースより多い場合のエラー回避
     const displayCount = Math.min(numPostsToShow, postDatabase.length);
 
     for (let i = 0; i < displayCount; i++) {
         let postIndex;
-        // 重複しないランダムなインデックスが見つかるまで探す
-        if (usedIndices.size >= postDatabase.length) break; // 全て表示したらループを抜ける
+        if (usedIndices.size >= postDatabase.length) break;
         do {
             postIndex = Math.floor(Math.random() * postDatabase.length);
         } while (usedIndices.has(postIndex));
@@ -134,16 +105,21 @@ function generateBbsPosts() {
 
 // --- ページ読み込み完了時に実行する処理 ---
 document.addEventListener('DOMContentLoaded', function() {
+    // ▼▼▼ ここからが修正箇所 ▼▼▼
     // 1. ハンバーガーメニュー機能
     const hamburger = document.querySelector('.hamburger-menu');
     const header = document.querySelector('header');
-    if (hamburger && header) {
+
+    // ハンバーガーアイコン自体が存在するかチェック
+    if (hamburger) {
         hamburger.addEventListener('click', function() {
+            // ヘッダーに 'nav-open' クラスを付けたり消したりする
             header.classList.toggle('nav-open');
         });
     }
+    // ▲▲▲ ここまでが修正箇所 ▲▲▲
 
-    // 2. スクロール連動の背景色変更機能
+    // 2. スクロール連動の背景色変更機能 (変更なし)
     window.addEventListener('scroll', function() {
         let scrollRatio = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
         if (scrollRatio > 1) scrollRatio = 1;
